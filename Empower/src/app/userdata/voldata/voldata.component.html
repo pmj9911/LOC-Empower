@@ -1,0 +1,59 @@
+<body>
+<div id="mySidebar" class="sidebar">
+        <br>
+        <br>
+        <br>
+        
+        <a routerLink="/memberProfile" routerLinkActive="active">Profile</a>
+        <!-- <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a> -->
+        <a routerLink="/memberdata" routerLinkActive="active">Members</a>
+        <a routerLink="/donordata" routerLinkActive="active">Donors</a>
+        <a routerLink="/volunteerdata" routerLinkActive="active">Volunteers</a>
+        <button class="" (click)="logoutUser()"> Sign Out</button>
+        <a></a>
+    </div>
+    <div id="main">
+        <button class="openbtn" (click)="openNav()">☰</button>
+    
+    </div>
+<router-outlet></router-outlet>
+<h1 style="text-align: center; color: white;">List of Volunteers</h1>
+<div class="row" >
+
+<div class="col-4" *ngFor="let member of VolArray; let i = index">
+  <router-outlet class="center-content"></router-outlet>     
+      <div class="col-12">
+          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+              <div class="mainflip">
+                  <div class="frontside">
+                      <div class="card">
+                          <div class="card-body text-center">
+                              <br>
+                              <br>
+                              <br>
+                              <h4 class="card-title">Name:{{member.name}}</h4>
+                              <p class="card-text">E-mail: {{member.email}}</p>
+                              <p class="card-text">POC number:{{member.Contact}}</p>
+                            
+                          </div>
+                      </div>
+                  </div>
+                  <div class="backside">
+                      <div class="card">
+                          <div class="card-body text-center mt-4">
+                              <br>
+                              <br>
+                              <br>
+                              <h4 class="card-title">POC Name:{{member.PocName}}</h4>
+                              <p class="card-text">POC number: {{member.PocNo}}</p> 
+                             
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</body>

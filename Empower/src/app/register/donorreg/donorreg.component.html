@@ -1,0 +1,41 @@
+
+<body>          
+  <form id="f" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+      <div class="form-group">
+        <label for="name" style="color:white;font-size:2.1em;">DONOR NAME</label>
+        <input type="text" class="form-control" placeholder="Enter Donor Name" name="name" [(ngModel)]="model.name" #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required />
+        <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+          <div *ngIf="name.errors.required" style="color:red;"><strong>DONOR NAME IS REQUIRED</strong></div>
+        </div>
+      </div>
+      <br>
+      <br>
+      
+      <div class="form-group">
+        <label for="email" style="color:white;font-size:2.1em;">EMAIL</label>
+        <input type="text" class="form-control" placeholder="Enter Email ID" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+          <div *ngIf="email.errors.required" style="color:red;">Email is required</div>
+          <div *ngIf="email.errors.email" style="color:red;">Email must be a valid email address</div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="form-group">
+        <label for="Contact" style="color:white;font-size:2.1em;">CONTACT NUMBER</label>
+        <input type="text" class="form-control" placeholder="Enter Contact Number"  name="Contact" [(ngModel)]="model.Contact" #Contact="ngModel" [ngClass]="{ 'is-invalid': f.submitted && Contact.invalid }" required minlength="10" />
+        <div *ngIf="f.submitted && Contact.invalid" class="invalid-feedback">
+          <div *ngIf="Contact.errors.required" style="color:red;">Contact is required</div>
+          <div *ngIf="Contact.errors.minlength" style="color:red;">Contact must be 10 numbers long</div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="form-group">
+          <button  class="btn" style="background-color:burlywood;color:black"><strong>Register</strong></button>
+      </div>
+  </form>
+</body>
+  
+    
+        

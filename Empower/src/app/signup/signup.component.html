@@ -1,0 +1,65 @@
+<body>
+  <div class="container-fluid row center-content">
+      <div class="col-4"></div>
+      <div class="col-4">
+          <h3 class="card-text" style="padding-top:5px;Font-size:20px;margin-left: 20px;text-decoration: underline"></h3><br><br>
+          <h3 class="text-center" style="color:white; font-size: 4.2em; letter-spacing: 0.09em; font-weight:80px;"> SIGN UP </h3>
+          <br>
+          <br>
+          <form [formGroup]="SignupForm" class="form-custom center-content text-center" >
+              <div class="form-group">
+                  <div class="form-label-group ">
+                      <label for="email" style="color:white; font-weight:80px;">EMAIL ADDRESS</label>
+                      <input type="email" id="email" formControlName="email"  class="form-control" placeholder="Personal Email" required autofocus>
+                  </div>
+                  <br>
+                  <br>
+                  <div class="form-label-group">
+                      <label for="password" style="color:white; font-weight:80px;">PASSWORD</label>
+                      <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password" required>
+                      <!-- <label for="password">PASSWORD</label> -->
+                  </div>
+                  <br>
+                  <br>
+                  <div class="form-label-group">
+                      <label for="inputConfirmPassword" style="color:white; font-weight:80px;">CONFIRM PASSWORD</label>
+                      <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
+                      <!-- <label for="inputConfirmPassword">CONFIRM PASSWORD</label> -->
+                  </div>
+                  <br>
+                  <br>
+                      <div class="form-group login-group-checkbox" [class.has-error]="q1.touched && q1.invalid">
+                              <label for="q1" class="control-label"style="color:white; font-weight:80px;">WHICH CATEGORY DO YOU FALL IN?</label>
+                              <div class="form-control">
+                                <label class="radio-inline">
+                                  <p><input type="radio" required  name="q1" value="Member" [(ngModel)]="model.q1" #q1="ngModel" [ngModelOptions]="{standalone: true}"><i><strong>MEMBER</strong></i></p>
+                                </label>
+                                <label class="radio-inline">
+                                <p><input type="radio" required name="q1" value="Volunteer" [(ngModel)]="model.q1" #q1="ngModel" [ngModelOptions]="{standalone: true}"><i><strong>VOLUNTEER</strong></i></p>
+                                </label>
+                                <label class="radio-inline">
+                                    <p><input type="radio" required #q1="ngModel" name="q1" value="Donor" [(ngModel)]="model.q1" [ngModelOptions]="{standalone: true}"><i><strong>DONOR</strong></i></p>
+                              </label>
+                                <br>
+                                <span  style="color: red" class="help-block" *ngIf="q1.touched && q1.invalid">
+                                  <strong>ONE OPTION NEEDS TO BE SELECTED</strong>
+                                </span>
+                              </div>
+                            </div>
+                            <br>
+                  <label class="error">{{errorMessage}}</label>
+                  <h1 class="success">{{successMessage}}</h1>
+                  <button type="submit"  style="background-color:white;color:black;" mat-button [disabled]="q1.errors" (click)="trySignup(SignupForm.value)" class="btn btn-info form-control col"><strong>GETTING STARTED!</strong></button>
+                  <hr class="my-4" >
+                  <button class="btn btn-lg btn-google btn-block text-uppercase" style="color:white; font-weight:80px;" type="submit"><i class="fab fa-google mr-2"></i><i>SIGN IN WITH GOOGLE</i></button>
+              </div>
+          </form>
+      </div>
+      <div class="col-4"></div>
+  </div>
+  <router-outlet></router-outlet>
+</body>
+
+
+
+

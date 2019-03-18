@@ -1,0 +1,9 @@
+body{
+    background-image:url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+}
+
+
+.btn-google {
+    color: white;
+    background-color: #ea4335;
+}

@@ -1,0 +1,73 @@
+<body>
+  <div class="container-fluid row center-content">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <h3 class="card-text" style="padding-top:5px;Font-size:20px;margin-left: 20px;text-decoration: underline"></h3><br><br>
+        <h3 class="text-center" style="color:white;font-size: 4.2em; letter-spacing: 0.09em; font-weight:80px;"> LOGIN</h3>
+        <br>
+        <br>
+        <form [formGroup]="LoginForm" class="form-custom center-content text-center" >
+          <div class="form-group">
+    
+            <div class="form-label-group ">
+              <label for="email" style="color:white; font-weight:80px;">EMAIL ADDRESS</label>
+              <input type="email" id="email" formControlName="email" class="form-control" [(ngModel)]="model.email" placeholder="Email address" required autofocus>
+              <!-- <label for="email" style="color:white; font-weight:80px;">Email address</label> -->
+            </div>
+            <br>
+            <br>
+    
+            <div class="form-label-group">
+              <label for="password" style="color:white; font-weight:80px;">PASSWORD</label>
+              <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password" required>
+              <!-- <label for="password" style="color:white; font-weight:80px;">Password</label> -->
+              <br>
+              <br>
+            </div>
+            
+            <label class="error">{{errorMessage}}</label>
+
+            <div class="form-group login-group-checkbox" [class.has-error]="q1.touched && q1.invalid">
+                <label for="q1" class="control-label" style="color:white; font-weight:80px;">WHAT CATEGORY YOU BELONG TO?</label>
+                <div class="form-control">
+                  <label class="radio-inline">
+                    <input type="radio" required  name="q1" value="Member" [(ngModel)]="model.q1" #q1="ngModel" [ngModelOptions]="{standalone: true}">Member
+                    </label>
+                  <label class="radio-inline">
+                    <input type="radio" required name="q1" value="Volunteer" [(ngModel)]="model.q1" #q1="ngModel" [ngModelOptions]="{standalone: true}">Volunteers
+                    </label>
+                  <label class="radio-inline">
+                      <input type="radio" required #q1="ngModel" name="q1" value="Donor" [(ngModel)]="model.q1" [ngModelOptions]="{standalone: true}">Donor
+                      </label>
+    
+                  <br>
+                  <span  style="color: red" class="help-block" *ngIf="q1.touched && q1.invalid">
+                    PLEASE SELECT ONE OPTION.
+                  </span>
+                </div>
+              </div>
+              <br>
+            <button type="submit"  mat-button [disabled]="q1.errors"  (click)="tryLogin(LoginForm.value); " class="btn btn-info form-control col" >LOGIN TO YOUR ACCOUNT</button>
+            <hr class="my-4">
+    
+          </div>
+          <br>
+          
+        </form>
+      </div>
+      
+    </div>
+  </body>
+    
+    
+    
+    <!--<input type="email"   class="form-control" placeholder="Email" name="email"  required email>-->
+    <!--<br>-->
+    <!--<input type="password"  class="form-control" placeholder="Password" name="password" />-->
+    <!--<label class="error">{{errorMessage}}</label>-->
+    <!--<br>-->
+    <!--<div class="row">-->
+      <!--<button type="submit" (click)="tryLogin(LoginForm.value)" class="btn btn-info form-control col">Login</button>-->
+      <!--<button class="btn btn-success form-control col">Forgot Password</button>-->
+    <!--</div>-->
+    <!-- </body>  -->

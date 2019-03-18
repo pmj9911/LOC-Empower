@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <div class="collapse navbar-collapse BtnForNav">
+    <div class="row">
+    <a  class="nav-link BtnForNav" style="color:white;font-size:24px;" routerLink="home" routerLinkActive="active" >HOME</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    </ul>
+
+    <div class="my-2 my-lg-0" *ngIf="!userPresent;else userProfileBlock">
+      <button class="btn BtnForNav " style="color:white;font-size:24px; background-color: black">Young Innovators Foundation & Vivekananda Youth Foundation</button>
+      <button  class="btn BtnForNav mr-sm-2 float-right" style="color:white;font-size:24px;" (click)="loadLogin()">SIGN IN</button>
+      <button class="btn BtnForNav my-2 my-sm-0 float-right" style="color:white;font-size:24px;"(click)="goToSignup()">SIGN UP</button>
+    </div>
+    <ng-template #userProfileBlock>
+      
+      <div class="my-2 my-lg-0">
+       
+        <button class="test1" style="color:white;font-size:24px; background-color: black">Young Innovators Foundation & Vivekananda Youth Foundation</button>
+          <button class="btn dropdown-toggle float-right" type="button" id="dropdownMenu2"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size:20px;color: white; font-weight: normal">
+            {{ user.email }}
+          </button>
+            <button class="btn BtnForNav my-2 my-sm-0 float-right" style="color:white;font-size:24px;" type="button" (click)="logoutUser()">Logout</button>
+          
+      </div>
+    </ng-template>
+  </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+<div class="bodyForFooter">
+  <app-footer></app-footer>
+</div>

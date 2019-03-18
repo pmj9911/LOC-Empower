@@ -1,0 +1,12 @@
+body{
+    text-align:center;
+    padding-top:60px;
+    padding-left:150px;
+    padding-right:150px;
+    padding-bottom:60px;
+    margin-left:250px;
+    margin-right:250px;
+    margin-top:0px;
+    color:black;
+    background-image:url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+}

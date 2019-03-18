@@ -1,0 +1,52 @@
+<body>
+  <div id="mySidebar" class="sidebar">
+      <br>
+      <br>
+      <br>
+      
+      <a routerLink="/memberProfile" routerLinkActive="active">Profile</a>
+      <!-- <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a> -->
+      <a routerLink="/memberdata" routerLinkActive="active">Members</a>
+      <a routerLink="/donordata" routerLinkActive="active">Donors</a>
+      <a routerLink="/volunteerdata" routerLinkActive="active">Volunteers</a>
+      <button class="" (click)="logoutUser()"> Sign Out</button>
+      <a></a>
+  </div>
+  <div id="main">
+      <button class="openbtn" (click)="openNav()">☰</button>
+
+  </div>
+  <router-outlet></router-outlet>
+
+  <div class="row">
+    <div class="col-4"></div>
+      <div class="col-2">
+          Name
+      </div>
+      
+      <div class="col-6">
+        {{name}}
+      </div>
+
+  </div>
+
+  <div class="row">
+      <div class="col-4"></div>
+      <div class="col-2">
+      Contact No: 
+    </div>
+    <div class="col-6">
+      {{contactNo}}
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="col-4"></div>
+      <div class="col-2">
+      Email id: 
+      </div>
+      <div class="col-6">
+        {{emailId}}
+      </div>
+    </div>
+  </body>
